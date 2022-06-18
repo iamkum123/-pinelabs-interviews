@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ctFysY3O+JakPVFa5O00qKWDVrxzlS1Ejy0KDFKCfk5OnhIg7R5qx91gKBUOz3qAjoXpEkruBk/tzdeZyd1V2w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kjwer\\source\\repos\\requirement2\\requirement2\\requirement2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kjwer\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
