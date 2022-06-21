@@ -1,0 +1,133 @@
+﻿@using requirement4.Models
+@model PayslipSubmit
+
+@{
+    //Layout = null;
+}
+
+@{
+ 
+   
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Submit Payslip</title>
+</head>
+<body>
+
+<h4>Submit your info to get your payslip</h4>
+<hr />
+@using (Html.BeginForm("Submit","Home",FormMethod.Post))
+{
+    <table cellpadding="5" cellspacing="5">
+        <tr>
+            <th colspan="2" align="center">Person Details</th>
+        </tr>
+        <tr>
+            <td>name: </td>
+            <td>
+                @Html.TextBoxFor(m => m.PayslipRequest.Name)
+            </td>
+        </tr>
+        
+        <tr>
+            <td>annualpay: </td>
+            <td>
+                @Html.TextBoxFor(m => m.PayslipRequest.AnnualPay)
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button style="float:right;" type="submit" class="btn btn-info">Submit</button>
+             </td>
+        </tr>
+    </table>
+}
+
+<div id="errorContainer" style="color:red"></div>
+<hr />
+<div id="data" style="display:none" >
+        
+        <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Gross Monthly Income
+                </th>
+                <th>
+                    Monthly Income Tax
+                </th>
+                <th>
+                    Net Monthly Income
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+         <tbody>
+           <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.PayslipResponse.employee_name)
+                </td>
+                <td>
+                   RM @Html.DisplayFor(modelItem => Model.PayslipResponse.gross_monthly_income)
+                </td>
+                <td>
+                   RM @Html.DisplayFor(modelItem => Model.PayslipResponse.monthly_income_tax)
+                </td>
+                <td>
+                   RM @Html.DisplayFor(modelItem => Model.PayslipResponse.net_monthly_income)
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+   
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@*
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
+</body>
+</html>
+
+<script type="text/javascript">
+   // var data = { "firstField" : "value1", "secondField": "value2" };
+    function show_payslip() {
+        var div = document.getElementById("data");
+        div.style.display = "block"; 
+
+    
+    }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+   var dataExists = "@ViewBag.dataExists";
+    if (dataExists == "True") {
+        var div = document.getElementById("data");
+        div.style.display = "block"; 
+    }
+
+    var errorMsg = "@ViewBag.errorMsg";
+    if (errorMsg != "") {
+        var div = document.getElementById("errorContainer");
+        div.innerHTML = errorMsg;
+    }
+
+}, false);
+</script>

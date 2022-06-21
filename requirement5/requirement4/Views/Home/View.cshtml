@@ -1,0 +1,60 @@
+﻿@model IEnumerable<requirement4.Models.PayslipDisplay>
+
+@{
+    //Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View Payslip</title>
+</head>
+<body>
+<h4>Payslip List</h4>
+<hr />
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Submitted Time
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Annual Salary
+            </th>
+            <th>
+                Monthly Income Tax
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.time_stamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employee_name)
+            </td>
+            <td>
+              RM  @Html.DisplayFor(modelItem => item.annual_salary)
+            </td>
+            <td>
+              RM  @Html.DisplayFor(modelItem => item.monthly_income_tax)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+<style>
+    body {
+    background-color:cornflowerblue;
+    }
+</style>
+<body>
+<div class="text-center" font-weight= "bold">
+    <h1 class="display-4">Payslip Management System</h1>
+    <hr />
+    <table cellpadding="5" cellspacing="5" align="center">
+    <tr>
+<td>
+    <button style="float:right;" type="submit" class="btn btn-info" onclick="window.open('@Url.Action("View", "Home")')">View Payslip</button>
+</td>
+<td>
+    <button style="float:right;" type="submit" class="btn btn-info" onclick="window.open('@Url.Action("Submit", "Home")')">Submit Payslip</button>
+</td>
+    </tr>
+    </table>
+</div>
+</body>
