@@ -33,7 +33,7 @@ namespace requirement1.Controllers
 
 
         [Route("~/api/submitpayslip")]
-        [HttpGet]
+        [HttpPost]
         public void GetPayslip()
         {
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xVg0pJDUN4UcRG1uq2nhvXSiNyHCs69ER0TNtfJaMem8WXpdBbb8zcS+IxlG6PZ6/MPVzlUwcaH5/04wwMLrEA==",
+  "dgSpecHash": "BYOQCcZN9Q6a5/kPkDM9RhCTYDtKZJboE7Ccoy3jmfgvADY0ZRiEpIE6J1PH/k4sYj5LWjBvuiNhxyoDG9yp8g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kjwer\\source\\repos\\requirement1\\requirement1\\requirement1.csproj",
+  "projectFilePath": "C:\\git\\myself\\requirement1\\requirement1\\requirement1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjwer\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\kjwer\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

@@ -29,6 +29,25 @@ namespace requirement1
 
         }
 
+        [TestMethod()]
+        public void TestResultFunction()
+        {
+            Models.PayslipResponse e1 = new Models.PayslipResponse();
+            Models.PayslipResponse e2 = new Models.PayslipResponse();
+            Models.PayslipResponse e3 = new Models.PayslipResponse();
+
+            e1.generate_monthly_payslip("tim", 60000);
+            e2.generate_monthly_payslip("tim", 80150);
+            e3.generate_monthly_payslip("tim", 200000);
+
+            Assert.AreEqual(6000, Math.Round(Convert.ToDouble(e1.monthly_income_tax) * 12));
+            Assert.AreEqual(10045, Math.Round(Convert.ToDouble(e2.monthly_income_tax) * 12));
+            Assert.AreEqual(48000, Math.Round(Convert.ToDouble(e3.monthly_income_tax) * 12));
+
+
+
+        }
+
 
     }
 }

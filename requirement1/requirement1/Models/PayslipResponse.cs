@@ -29,9 +29,9 @@
 
             //To assign value to attributes
             employee_name = name;
-            gross_monthly_income = monthlypay.ToString("#.00");
-            monthly_income_tax = monthlytotaltax.ToString("#.00");
-            net_monthly_income = netmonthlyincome.ToString("#.00");
+            gross_monthly_income = monthlypay.ToString("0.00");
+            monthly_income_tax = monthlytotaltax.ToString("0.00");
+            net_monthly_income = netmonthlyincome.ToString("0.00");
 
             //unit test
             if (AnnualPay < 0)
@@ -42,6 +42,7 @@
             Console.WriteLine("Gross Monthly Income: $" + gross_monthly_income);
             Console.WriteLine("Monthly Income Tax: $" + monthly_income_tax);
             Console.WriteLine("Net Monthly Income: $" + net_monthly_income);
+            Console.WriteLine("");
 
             /*//Insert into DB table
             try
@@ -72,44 +73,62 @@
             Boolean TAX40 = false; //indicator if the amount exceeds condition
             Boolean TAX30 = false;
             Boolean TAX20 = false;
-            //  Boolean TAX10 = false;
+            Boolean TAX = false;
+            List<double> SalaryBracket = new List<double> { 0, 20000, 40000, 80000, 180000 };
+            List<double> TaxRate = new List<double> { 0, 10, 20, 30, 40 };
 
-            if (annualpay > 180000)
+            //Simplified calculation replacing code below using for loop
+            for (int i = SalaryBracket.Count; i > 0; i--)
             {
-                tax += (annualpay - 180000) * 4 / 10;
-                TAX40 = true;
+                if (annualpay > SalaryBracket[i - 1])
+                {
+                    if (TAX == true)
+                        tax += (SalaryBracket[i] - SalaryBracket[i - 1]) * TaxRate[i - 1] / 100;
+                    else
+                    {
+                        tax += (annualpay - SalaryBracket[i - 1]) * TaxRate[i - 1] / 100;
+                        TAX = true;
+                    }
+                }
             }
 
-            if (annualpay > 80000)
-            {
-                if (TAX40 == true)
-                    tax += 100000 * 3 / 10;
-                else
-                    tax += (annualpay - 80000) * 3 / 10;
-                TAX30 = true;
-            }
+            //Initial calculation
+            /* if (annualpay > SalaryBracket[3])
+             {
+                 tax += (annualpay - SalaryBracket[3]) * TaxRate[3] / 100;
+                 TAX40 = true;
+             }
 
-            if (annualpay > 40000)
-            {
-                if (TAX30 == true)
-                    tax += 40000 * 2 / 10;
-                else
-                    tax += (annualpay - 40000) * 2 / 10;
-                TAX20 = true;
-            }
+             if (annualpay > SalaryBracket[2])
+             {
+                 if (TAX40 == true)
+                     tax += (SalaryBracket[3]- SalaryBracket[2]) * TaxRate[2] / 100;
+                 else
+                     tax += (annualpay - SalaryBracket[2]) * TaxRate[2] / 100;
+                 TAX30 = true;
+             }
 
-            if (annualpay > 20000)
-            {
-                if (TAX20 == true)
-                    tax += 20000 * 1 / 10;
-                else
-                    tax += (annualpay - 20000) * 1 / 10;
-            }
+             if (annualpay > SalaryBracket[1])
+             {
+                 if (TAX30 == true)
+                     tax += SalaryBracket[1] * TaxRate[1] / 100;
+                 else
+                     tax += (annualpay - SalaryBracket[1]) * TaxRate[1] / 100;
+                 TAX20 = true;
+             }
 
-            if (annualpay <= 20000)
-            {
-                tax = 0;
-            }
+             if (annualpay > SalaryBracket[0])
+             {
+                 if (TAX20 == true)
+                     tax += SalaryBracket[0] * TaxRate[0] / 100;
+                 else
+                     tax += (annualpay - SalaryBracket[0]) * TaxRate[0] / 100;
+             }
+
+             if (annualpay <= SalaryBracket[0])
+             {
+                 tax = 0;
+             }*/
 
             return tax;
         }
