@@ -1,0 +1,7 @@
+20220615
+* Initial Script
+-To display my information
+
+20220620
+* Initial commit:
+1.To create get api to get list of payslip in json format from database table [payslip]
