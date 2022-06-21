@@ -1,0 +1,8 @@
+20220615
+* Initial Script
+-To display my information
+
+20220618
+* Initial commit:
+1. To create post api to submit name and annualpay and receive payslip info
+2. To store time, name, annualpay, monthlytax to database table [payslip]
