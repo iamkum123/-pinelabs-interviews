@@ -1,0 +1,12 @@
+20220618
+* Initial commit:
+1. To create function (generate_monthly_payslip ) to calculate tax and print payslip
+2. Post API to trigger function
+
+20220621
+* Requirement1:
+1. To implement a simplified tax calculator function replacing the initial calculation.
+2. To add unit test to test tax calculator entirely.
+
+20220621A
+* To add gitignore file
